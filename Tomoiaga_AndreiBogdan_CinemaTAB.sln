@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tomoiaga_AndreiBogdan_CinemaTAB", "Tomoiaga_AndreiBogdan_CinemaTAB.csproj", "{8E9C77B6-3949-42ED-A5DA-6B4212145CE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tomoiaga_AndreiBogdan_CinemaTAB", "Tomoiaga_AndreiBogdan_CinemaTAB.csproj", "{8E9C77B6-3949-42ED-A5DA-6B4212145CE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaModel", "..\CinemaModel\CinemaModel.csproj", "{D5E2A2B8-4E47-4D05-B552-7D81BE0E11EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaWebAPI", "..\CinemaWebAPI\CinemaWebAPI.csproj", "{B5A9EB3D-C00F-49E4-838A-23EDC10A0784}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{8E9C77B6-3949-42ED-A5DA-6B4212145CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E9C77B6-3949-42ED-A5DA-6B4212145CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E9C77B6-3949-42ED-A5DA-6B4212145CE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5E2A2B8-4E47-4D05-B552-7D81BE0E11EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E2A2B8-4E47-4D05-B552-7D81BE0E11EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E2A2B8-4E47-4D05-B552-7D81BE0E11EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E2A2B8-4E47-4D05-B552-7D81BE0E11EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5A9EB3D-C00F-49E4-838A-23EDC10A0784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A9EB3D-C00F-49E4-838A-23EDC10A0784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5A9EB3D-C00F-49E4-838A-23EDC10A0784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A9EB3D-C00F-49E4-838A-23EDC10A0784}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CinemaModel.Models.Studio>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Studios</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.StudioName)*@
+                Studio Name
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Founded)*@
+                Founded
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.ParentOrganization)*@
+                Parent Organization
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudioName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Founded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentOrganization)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.StudioID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.StudioID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.StudioID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

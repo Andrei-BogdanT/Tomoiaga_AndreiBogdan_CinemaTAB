@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Tomoiaga_AndreiBogdan_CinemaTAB.Models.CinemaViewModels.POStudioGroup>
+@{
+    ViewData["Title"] = "Parent Organization Studios Statistics";
+}
+<h2>Parent Organization Studios Statistics</h2>
+<table>
+    <tr>
+        <th>
+            ParentOrganization
+        </th>
+        <th>
+            Studios
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentOrganization)
+            </td>
+            <td>
+                @item.StudioCount
+            </td>
+        </tr>
+    }
+</table>

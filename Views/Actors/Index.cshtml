@@ -1,0 +1,129 @@
+﻿@model Tomoiaga_AndreiBogdan_CinemaTAB.Models.CinemaViewModels.ActorIndexData
+@{
+    ViewData["Title"] = "Actors";
+}
+<h2>Actors</h2>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>BirthDate</th>
+            <th>BirthPlace</th>
+            <th>Movies</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Actors)
+        {
+            string selectedRow = "";
+            if (item.ActorID == (int?)ViewData["ActorID"])
+            {
+                selectedRow = "success";
+            }
+            <tr class="@selectedRow">
+                <td>
+                    @{ var x = "~/Images/" + item.Name + ".jpg";}
+                    <img src="@Url.Content(x)" style="width:150px; height:200px;" />
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BirthDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BirthPlace)
+                </td>
+
+                <td>
+                    @{
+                        foreach (var movie in item.AppearanceMovies)
+                        {
+                            @movie.Movie.MovieID @: @movie.Movie.Title <br />
+                        }
+                    }
+                </td>
+                <td>
+                    <a asp-action="Index" asp-route-id="@item.ActorID">Select</a> |
+                    <a asp-action="Edit" asp-route-id="@item.ActorID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ActorID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ActorID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (Model.Movies != null)
+{
+    <h3>Movies in which the Selected actor played</h3>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Film Director</th>
+            <th>Release Date</th>
+            <th>Box Office</th>
+        </tr>
+        @foreach (var item in Model.Movies)
+        {
+            string selectedRow = "";
+            if (item.MovieID == (int?)ViewData["MovieID"])
+            {
+                selectedRow = "success";
+            }
+            <tr class="@selectedRow">
+                <td>
+                    @Html.ActionLink("Select", "Index", new { movieID = item.MovieID })
+                </td>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.FilmDirector
+                </td>
+                <td>
+                    @item.ReleaseDate
+                </td>
+                <td>
+                    @item.BoxOffice
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+@if (Model.Studios != null)
+{
+    <h3>
+        The studio that produced the selected movie
+    </h3>
+    <table class="table">
+        <tr>
+            <th>Studio Name</th>
+            <th>Founded</th>
+            <th>ParentOrganization</th>
+        </tr>
+        @foreach (var item in Model.Studios)
+        {
+    <tr>
+        <td>
+            @item.StudioName
+        </td>
+        <td>
+            @item.Founded
+        </td>
+        <td>
+            @item.ParentOrganization
+        </td>
+
+    </tr>
+        }
+    </table>
+}
